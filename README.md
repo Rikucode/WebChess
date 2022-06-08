@@ -1,1 +1,1 @@
-# WebChess
+# WebMinesweeper
