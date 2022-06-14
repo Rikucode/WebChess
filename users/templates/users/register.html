@@ -1,0 +1,36 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'users/css/main.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<div class="container"  align='center'>
+    <h1 style="margin: 30px" align='center'>Register</h1>
+    <div style="margin-top: 50px; margin-bottom: 20px">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div style="display: flex;">
+                <div class="category" align='right'>
+                    <div style="font-size: 20px; font-weight: bold; margin-bottom: 20px">Username</div>
+                    <div style="font-size: 20px; font-weight: bold; margin-bottom: 20px">Email</div>
+                    <div style="font-size: 20px; font-weight: bold; margin-bottom: 20px">Password</div>
+                    <div style="font-size: 20px; font-weight: bold; margin-bottom: 20px">Confirmation</div>
+                </div>
+                <div style="display: absolute">
+                    <div class="input-box">{{form.username}}</div>
+                    <div class="input-box">{{form.email}}</div>
+                    <div class="input-box">{{form.password1}}</div>
+                    <div class="input-box">{{form.password2}}</div>
+                </div>
+            </div>
+            <div align='center' style="margin-top: 20px"><input type="submit" class='login_btn' value="Register"></div>
+        </form>
+    </div>
+    <div  style="font-weight: bold">
+        Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+    </div>
+</div>
+{% endblock content %}

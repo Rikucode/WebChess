@@ -1,0 +1,14 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block title %}Minesweeper{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'users/css/main.css' %}">
+    <ul class='btn_list'>
+        {% if user.is_authenticated %}                   
+            <li class='btn1'><a href="{% url 'play' %}">Play</a></li>
+        {% else %}
+            <li class='btn1'><a href="{% url 'register' %}">Play</a></li>
+        {% endif %}
+        <li class='btn1'><a href="{% url 'ranking' %}">Rankings</a></li>
+    </ul>
+{% endblock content %}
