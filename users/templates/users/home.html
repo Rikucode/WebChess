@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}Minesweeper{% endblock %}
 {% block content %}
-<link rel="stylesheet" href="{% static 'users/css/main.css' %}">
+<link rel="stylesheet" href="{% static 'users/styles/main.css' %}">
     <ul class='btn_list'>
         {% if user.is_authenticated %}                   
             <li class='btn1'><a href="{% url 'play' %}">Play</a></li>

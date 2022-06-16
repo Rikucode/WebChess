@@ -1,7 +1,12 @@
 {% extends 'users/base.html' %}
 {% load static %}
+{% block preload %}
+    <link rel="stylesheet" href="{% static 'users/styles/game.css' %}">
+{% endblock %}
 {% block title %}Minesweeper{% endblock %}
 {% block content %}
-<link rel="stylesheet" href="{% static 'users/css/main.css' %}">
+    <div class="field">
 
+    </div>
+    <script src="{% static 'users/scripts/game.js' %}" defer></script>
 {% endblock content %}
