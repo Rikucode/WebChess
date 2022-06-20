@@ -1,5 +1,7 @@
 .play-field {
     position: relative;
+
+    width:80vh;
 }
 
 .field {
@@ -28,6 +30,9 @@ button {
     color: red;
 }
 
+#win{
+    color: limegreen;
+}
 .message p {
     font-size: 50px;
     font-weight: bold;

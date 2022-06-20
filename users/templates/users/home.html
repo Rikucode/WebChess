@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'users/styles/main.css' %}">
     <ul class='btn_list'>
         {% if user.is_authenticated %}                   
-            <li class='btn1'><a href="{% url 'play' %}">Play</a></li>
+            <li class='btn1'><a href="{% url 'level' %}">Play</a></li>
         {% else %}
             <li class='btn1'><a href="{% url 'register' %}">Play</a></li>
         {% endif %}

@@ -7,8 +7,12 @@
 {% block title %}Minesweeper{% endblock %}
 {% block content %}
 <script src="{% static 'users/scripts/game.js' %}" defer></script>
+
 <div class = "play-field">
-    <div class="field">
+    <div class = 'timer'>
+        <h1 id="timer">00:00</h1>
+    </div>
+    <div class="field" id="field">
     </div> 
     <div id="lose" class="message" align='center'>
         <p>You Lost!</p>
@@ -19,4 +23,5 @@
         <a class='btn2' id="again" onclick = "RestartGame('win')">Try again</a>
     </div>
 </div>
+    <script src="{% static 'users/scripts/timer.js' %}"></script>
 {% endblock content %}

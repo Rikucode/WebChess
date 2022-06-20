@@ -1,7 +1,17 @@
-startGame(16, 16, 48);
+let game_mode = sessionStorage.getItem('game_mode');
+let width = sessionStorage.getItem('width');
+let height = sessionStorage.getItem('height');
+let bombs_quantity = sessionStorage.getItem('bombs_quantity');
 
-function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY) {
+
+startGame(width, height, bombs_quantity, game_mode);
+
+function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE) {
     const field = document.querySelector('.field');
+    console.log(document.getElementById('field').offsetWidth);
+
+    let par = 'repeat(' + width + ', ' + document.getElementById('field').offsetWidth/width +'px)';
+    document.getElementById('field').style.gridTemplateColumns = par;
     const cellsQuantity = WIDTH * HEIGHT;
     field.innerHTML = '<button></button>'.repeat(cellsQuantity);
     const cells = [...field.children];
@@ -152,6 +162,8 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY) {
 
 function gameOver(Id) {
     document.getElementById(Id).style.display = 'block';
+    clearTimeout(t);
+
 }
 
 function RestartGame(Id) {

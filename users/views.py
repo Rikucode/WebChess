@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegisterForm
 from django.contrib import messages
+from json import loads
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 

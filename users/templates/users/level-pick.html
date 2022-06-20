@@ -1,7 +1,33 @@
 {% extends 'users/base.html' %}
 {% load static %}
+{% block preload %}
+<link rel="stylesheet" href="{% static 'users/styles/main.css' %}">
+<link rel="stylesheet" href="{% static 'users/styles/level-pick.css' %}">
+{% endblock %}
 {% block title %}Minesweeper{% endblock %}
 {% block content %}
-<link rel="stylesheet" href="{% static 'users/styles/main.css' %}">
+    <div id="field">
+    <p>Please select game mode:</p>
+    <form id="settings">
+        <select id="game_mode" name="game_mode">
+            <option value="classic" selected>Classic Mode</option>
+            <option value="timer">Timer Mode</option>
+        </select>
+    <p>Also select difficulty level..</p>
+      <select id="difficulty" name="difficulty">
+        <option value="easy">Easy</option>
+        <option value="normal" selected>Normal</option>
+        <option value="hard">Hard</option>
+        <option value="custom" >Custom</option>
+      </select >
+        <div id="custom_diff">
+        <input type="text" name="width" placeholder="Input width here..(Can't be more than 50)">
+        <input type="text" name="height" placeholder="Input height here..(Can't be more than 50)">
+        <input type="text" name="bombs_quantity" placeholder="Input bombs number here..(Can't be more than 99% of field)">
+        </div>
+        <button class="start-game" type="submit">PLAY!</button>
+    </form>
 
+    </div>
+    <script src="{% static 'users/scripts/start-game.js' %}"></script>
 {% endblock content %}
