@@ -1,11 +1,54 @@
-.field{
+.play-field {
+    position: relative;
+}
+
+.field {
     display: grid;
-    grid-template-columns: repeat(8, 40px);
+    margin-top: 100px;
+    grid-template-columns: repeat(16, 45px);
 }
-button{
-    height:40px;
-    font-size: 24px;
+
+button {
+    height: 45px;
+    font-size: 26px;
+    font-weight: bold;
+    background-color: white;
 }
-.flag{
+
+.flag {
     background-color: red;
+}
+
+.message {
+    position: relative;
+    bottom: 50%;
+    height: 20% !important;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    color: red;
+}
+
+.message p {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.btn2 {
+    text-decoration: none;
+    cursor: pointer;
+    color: red !important;
+    font-weight: bold;
+    font-size: 25px;
+    align-self: center;
+    width: 30%;
+    display: block;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(130, 249, 209);
+}
+
+.btn2:hover {
+    background-color: rgba(100, 247, 220, 0.56);
 }
