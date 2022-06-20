@@ -1,12 +1,22 @@
 {% extends 'users/base.html' %}
 {% load static %}
 {% block preload %}
+    <link rel="stylesheet" href="{% static 'users/styles/main.css' %}">
     <link rel="stylesheet" href="{% static 'users/styles/game.css' %}">
 {% endblock %}
 {% block title %}Minesweeper{% endblock %}
 {% block content %}
+<script src="{% static 'users/scripts/game.js' %}" defer></script>
+<div class = "play-field">
     <div class="field">
-
+    </div> 
+    <div id="lose" class="message" align='center'>
+        <p>You Lost!</p>
+        <a class='btn2' id="again" onclick = "RestartGame('lose')">Try again</a>
     </div>
-    <script src="{% static 'users/scripts/game.js' %}" defer></script>
+    <div id="win" class="message" align='center'>
+        <p>Congratulations!</p>
+        <a class='btn2' id="again" onclick = "RestartGame('win')">Try again</a>
+    </div>
+</div>
 {% endblock content %}
