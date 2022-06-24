@@ -7,7 +7,7 @@
         {% if user.is_authenticated %}                   
             <li class='btn1'><a href="{% url 'level' %}">Play</a></li>
         {% else %}
-            <li class='btn1'><a href="{% url 'register' %}">Play</a></li>
+            <li class='btn1'><a href="{% url 'login' %}">Play</a></li>
         {% endif %}
         <li class='btn1'><a href="{% url 'ranking' %}">Rankings</a></li>
     </ul>
