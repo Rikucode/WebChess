@@ -9,11 +9,22 @@ startGame(width, height, bombs_quantity, game_mode);
 function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE) {
     const field = document.querySelector('.field');
     console.log(document.getElementById('field').offsetWidth);
-
-    let par = 'repeat(' + width + ', ' + document.getElementById('field').offsetWidth/width +'px)';
+    if (GAME_MODE == 'classic') {
+        document.getElementById('timer').style.display = 'none';
+        field.style.top = '50%';
+    }
+    var width_px = 750 / HEIGHT;
+    if (width_px > 45) width_px = 45;
+    let par = 'repeat(' + width + ', ' + width_px + 'px)';
     document.getElementById('field').style.gridTemplateColumns = par;
     const cellsQuantity = WIDTH * HEIGHT;
     field.innerHTML = '<button></button>'.repeat(cellsQuantity);
+    var buttons = document.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.height = width_px + 'px';
+        if (width_px < 15) buttons[i].style.fontSize = 5 + 'px';
+        else buttons[i].style.fontSize = (width_px - 15) + 'px';
+    }
     const cells = [...field.children];
 
     let closedCount = cellsQuantity;
