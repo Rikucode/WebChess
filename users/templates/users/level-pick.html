@@ -6,28 +6,44 @@
 {% endblock %}
 {% block title %}Minesweeper{% endblock %}
 {% block content %}
-    <div id="field">
-    <p>Please select game mode:</p>
+<div class="container" style="height: 335px" align='center' id='container-box'>
+  <h1 style="margin: 30px; font-weight: bold" align='center'>Game Level</h1>
+  <div style="margin-top: 50px; margin-bottom: 20px">
     <form id="settings">
-        <select id="game_mode" name="game_mode">
-            <option value="classic" selected>Classic Mode</option>
-            <option value="timer">Timer Mode</option>
-        </select>
-    <p>Also select difficulty level..</p>
-      <select id="difficulty" name="difficulty">
-        <option value="easy">Easy</option>
-        <option value="normal" selected>Normal</option>
-        <option value="hard">Hard</option>
-        <option value="custom" >Custom</option>
-      </select >
-        <div id="custom_diff">
-        <input type="text" name="width" placeholder="Input width here..(Can't be more than 50)">
-        <input type="text" name="height" placeholder="Input height here..(Can't be more than 50)">
-        <input type="text" name="bombs_quantity" placeholder="Input bombs number here..(Can't be more than 99% of field)">
+      <div style="display: flex;">
+        <div class="category" align='right'>
+          <div style="font-size: 20px; font-weight: bold; margin-bottom: 20px">Game Mode</div>
+          <div style="font-size: 20px; font-weight: bold; margin-bottom: 20px">Difficulty</div>
+          <div style="font-size: 20px; font-weight: bold; margin-bottom: 20px" id="custom_diff">Width</div>
+          <div style="font-size: 20px; font-weight: bold; margin-bottom: 20px" id="custom_diff">Height</div>
+          <div style="font-size: 20px; font-weight: bold; margin-bottom: 20px" id="custom_diff">Bombs</div>
         </div>
-        <button class="start-game" type="submit">PLAY!</button>
+        <div style="display: absolute; width: 50%" align='left'>
+          <div>
+            <select id="game_mode" name="game_mode" style="margin-bottom: 20px; height: 30px; width: 100%">
+              <option value="classic" selected>Classic Mode</option>
+              <option value="timer">Timer Mode</option>
+            </select>
+          </div>
+          <div>
+            <select id="difficulty" name="difficulty" style="margin-bottom: 20px; height: 30px; width: 100%">
+              <option value="easy">Easy</option>
+              <option value="normal" selected>Normal</option>
+              <option value="hard">Hard</option>
+              <option value="custom" >Custom</option>
+            </select>
+          </div>
+          <div id="custom_diff">
+            <div style="margin-bottom: 20px; height: 30px;"><input type="text" name="width" placeholder="Min: 8 Max: 32"></div>
+            <div style="margin-bottom: 20px; height: 30px"><input type="text" name="height" placeholder="Min: 8 Max: 32"></div>
+            <div style="margin-bottom: 10px; height: 30px"><input type="text" name="bombs_quantity" placeholder="Min: 1"></div>
+            <p style="color: red; font-size: 15px; font-weight: bold; display: none" id='warning'>Warning: Wrong values!</p>
+          </div>
+        </div>
+      </div>
+      <div align='center' style="margin-top: 20px"><input type="submit" class='login_btn' value="Play!"></div>
     </form>
-
-    </div>
+  </div>
+</div>
     <script src="{% static 'users/scripts/start-game.js' %}"></script>
 {% endblock content %}
