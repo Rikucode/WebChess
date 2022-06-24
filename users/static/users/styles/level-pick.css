@@ -1,60 +1,7 @@
-select {
-    width: 80%;
-    margin-top:0;
-    margin-left:10%;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #f1f1f1;
-    margin-bottom: 3%;
-}
-
-#field {
-    width:80%;
-    height:80%;
-    margin:10%;
-    margin-top: 5%;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius:10px;
-
-}
-
-p{
-    color:whitesmoke;
-    width:40%;
-    font-size:2.5em;
-    position: center;
-    margin-left:30%;
-}
-
-#custom_diff{
+#custom_diff {
     display: none;
 }
 
-input[type=text] {
-    width: 32%;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 12px;
-    margin:0.5%;
-}
-
-#custom-offer{
-    cursor:pointer;
-}
-
-.start-game{
-    margin-top: 2%;
-    margin-left:42.5%;
-    width:15%;
-    height:15%;
-    border: none;
-    border-radius: 5px;
-    font-size: 150%;
-    background-color: lawngreen;
+#custom-offer {
+    cursor: pointer;
 }
