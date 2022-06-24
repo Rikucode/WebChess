@@ -1,19 +1,18 @@
 .play-field {
     position: relative;
-
-    width:80vh;
 }
 
 .field {
     display: grid;
-    margin-top: 100px;
-    grid-template-columns: repeat(16, 45px);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 button {
-    height: 45px;
-    font-size: 26px;
-    font-weight: bold;
+    border-width: 1.5px;
+    color: black;
     background-color: white;
 }
 
@@ -22,17 +21,21 @@ button {
 }
 
 .message {
-    position: relative;
-    bottom: 50%;
     height: 20% !important;
+    position: absolute;
+    width: 100vw;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
     color: red;
 }
 
-#win{
+#win {
     color: limegreen;
 }
+
 .message p {
     font-size: 50px;
     font-weight: bold;
@@ -46,7 +49,7 @@ button {
     font-weight: bold;
     font-size: 25px;
     align-self: center;
-    width: 30%;
+    width: 400px;
     display: block;
     border-radius: 7px;
     border-style: solid;
@@ -56,4 +59,9 @@ button {
 
 .btn2:hover {
     background-color: rgba(100, 247, 220, 0.56);
+}
+
+.timer {
+    margin-top: 70px;
+    color: red;
 }
