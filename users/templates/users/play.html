@@ -8,12 +8,12 @@
 {% block content %}
 <script src="{% static 'users/scripts/game.js' %}" defer></script>
 
-<div class = "play-field">
+<div class = "play-field" align='center'>
     <div class = 'timer'>
         <h1 id="timer">00:00</h1>
     </div>
     <div class="field" id="field">
-    </div> 
+    </div>
     <div id="lose" class="message" align='center'>
         <p>You Lost!</p>
         <a class='btn2' id="again" onclick = "RestartGame('lose')">Try again</a>
