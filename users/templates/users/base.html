@@ -18,9 +18,8 @@
             <a class="logo" href="{% url 'home' %}">Minesweeper</a>
             <div class="nav-elem">
             <ul>
-                <li class="btn"><a href="{% url 'ranking' %}">Rankings</a></li>
                 {% if user.is_authenticated %}                   
-                    <li class="btn"><a href="{% url 'play' %}">Play</a></li>
+                    <li class="btn"><a href="{% url 'level' %}">Play</a></li>
                     <li class="btn">
                         <a href="#">{{request.user.username}}</a>
                         <div class="drop-down">
