@@ -8,24 +8,29 @@
 {% block title %}Minesweeper{% endblock %}
 {% block content %}
 <script src="{% static 'users/scripts/game.js' %}" defer></script>
-
-<div class = "play-field" align='center'>
-    <div class = 'timer'>
-        <h1 id="timer">00:00</h1>
+<div style="display: flex; width: 100%">
+    <div class='timer-container' align='center'>
+        <div class = 'timer' style='left: 40%'>
+            <h1 id="timer">00:00</h1>
+        </div>
     </div>
-    <div class="flags_amount">
-        <h1 id="flags_amount"></h1>
+    <div class = "play-field" align='center'>
+        <div class="field" id="field">
+        </div>
+        <div id="lose" class="message" align='center'>
+            <p>You Lost!</p>
+            <a class='btn2' id="again" onclick = "RestartGame('lose')">Try again</a>
+        </div>
+        <div id="win" class="message" align='center'>
+            <p>Congratulations!</p>
+            <a class='btn2' id="again" onclick = "RestartGame('win')">Try again</a>
+        </div>
     </div>
-    <div class="field" id="field">
-    </div>
-    <div id="lose" class="message" align='center'>
-        <p>You Lost!</p>
-        <a class='btn2' id="again" onclick = "RestartGame('lose')">Try again</a>
-    </div>
-    <div id="win" class="message" align='center'>
-        <p>Congratulations!</p>
-        <a class='btn2' id="again" onclick = "RestartGame('win')">Try again</a>
+    <div class='timer-container'>
+        <div class="flags_amount" style='right: 40%'>
+            <h1 id="flags_amount"></h1>
+        </div>
     </div>
 </div>
-    <script src="{% static 'users/scripts/timer.js' %}"></script>
+<script src="{% static 'users/scripts/timer.js' %}"></script>
 {% endblock content %}
