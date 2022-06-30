@@ -35,7 +35,7 @@ button:disabled{
 }
 
 .message {
-    height: 20% !important;
+    height: 25vh !important;
     position: absolute;
     width: 100vw;
     top: 43%;
@@ -51,9 +51,9 @@ button:disabled{
 }
 
 .message p {
-    font-size: 50px;
+    font-size: 4vw;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 3vh;
 }
 
 .btn2 {
@@ -61,9 +61,9 @@ button:disabled{
     cursor: pointer;
     color: red !important;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 2vw;
     align-self: center;
-    width: 400px;
+    width: 23vw;
     display: block;
     border-radius: 7px;
     border-style: solid;
