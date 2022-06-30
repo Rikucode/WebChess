@@ -137,9 +137,9 @@ a {
     text-decoration: none !important;
 
 }
-.logo{
-     margin-top: -1em;
-}
+/*.logo{*/
+/*     margin-top: -1em;*/
+/*}*/
 
 ul {
     padding-inline-start: 0px !important;
@@ -156,12 +156,13 @@ ul {
 
 .nav-elem ul {
     margin-bottom: 0px;
-    margin-top: -2em;
+    /*margin-top: -2em;*/
     display: flex;
 }
 
 .btn_list {
     align-self: center;
+    border: none;
 }
 
 .btn_list li {
@@ -184,6 +185,8 @@ ul {
 }
 
 .nav-elem ul li {
+    height: 3em;
+    margin-top: 0;
     list-style: none;
     border-radius: 7px;
     border-style: solid;
@@ -206,6 +209,9 @@ ul {
     color: #55E063 !important;
     font-size: 3vw;
     margin-left: 20px;
+    height:3em;
+    position: relative;
+    margin-top:0;
 }
 
 .btn1:hover {
