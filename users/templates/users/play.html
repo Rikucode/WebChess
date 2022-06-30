@@ -3,6 +3,7 @@
 {% block preload %}
     <link rel="stylesheet" href="{% static 'users/styles/main.css' %}">
     <link rel="stylesheet" href="{% static 'users/styles/game.css' %}">
+    <link rel="stylesheet" href="{% static 'users/styles/elementsImg.css' %}">
 {% endblock %}
 {% block title %}Minesweeper{% endblock %}
 {% block content %}
@@ -11,6 +12,9 @@
 <div class = "play-field" align='center'>
     <div class = 'timer'>
         <h1 id="timer">00:00</h1>
+    </div>
+    <div class="flags_amount">
+        <h1 id="flags_amount"></h1>
     </div>
     <div class="field" id="field">
     </div>

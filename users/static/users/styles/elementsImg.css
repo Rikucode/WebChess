@@ -1,0 +1,42 @@
+.b1,.b2,.b3,.b4,.b5,.b6,.b7,.b8,.bomb,.flag{
+    background-size: 75% 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.b1{
+   background-image: url("../images/1.png");
+}
+
+.b2{
+    background-image: url("../images/2.png");
+}
+
+.b3{
+    background-image: url("../images/3.png");
+}
+
+.b4{
+    background-image: url("../images/4.png");
+}
+
+.b5{
+    background-image: url("../images/5.png");
+}
+
+.b6{
+    background-image: url("../images/6.png");
+}
+
+.b7{
+    background-image: url("../images/7.png");
+}
+
+.b8{
+    background-image: url("../images/8.png");
+}
+.flag{
+    background-image: url("../images/flag.png");
+}
+.bomb{
+    background-image: url("../images/bomb.png");
+}

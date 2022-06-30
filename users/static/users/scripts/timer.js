@@ -46,7 +46,7 @@ function secundomer() {
 }
 
 function timer(min) {
-    t = setInterval(function () {
+    t = setInterval(() => {
         sec--;
         if (sec < 0) {
             sec = 59;

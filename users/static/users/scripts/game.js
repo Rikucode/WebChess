@@ -17,6 +17,13 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
 
     document.getElementById('field').style.gridTemplateColumns = 'repeat(' + width + ', ' + width_px + 'px)';
 
+    if (GAME_MODE == 'timer'){
+        let min = Math.floor(TIME);
+        let sec = (TIME - min) * 60;
+        document.getElementById('timer').textContent = (min > 9 ? min : "0" + min)
+        		 + ":" + (sec > 9 ? sec : "0" + sec);
+    }
+
     field.innerHTML = '<button></button>'.repeat(cellsQuantity);
     let buttons = document.getElementsByTagName('button');
 
@@ -26,7 +33,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
         else buttons[i].style.fontSize = (width_px - 15) + 'px';
     }
     const cells = [...field.children];
-
+    document.querySelector('#flags_amount').textContent = BOMBS_QUANTITY;
     let closedCount = cellsQuantity;
     let firstClick = true;
     let bombsFlagged = 0;
@@ -99,14 +106,41 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
         cell.disabled = true;
 
         if (isBomb(row, column)) {
-            cell.innerHTML = 'X';
+            cell.classList.add('bomb');
             gameOver('lose');
         } else {
             closedCount--;
             const nearBombsCount = nearBombsQuantity(row, column);
 
             if (nearBombsCount !== 0) {
-                cell.innerHTML = nearBombsCount;
+                let cellClass;
+                switch (nearBombsCount){
+                    case 1:
+                        cellClass = 'b1';
+                        break;
+                    case 2:
+                        cellClass = 'b2';
+                        break;
+                    case 3:
+                        cellClass = 'b3';
+                        break;
+                    case 4:
+                        cellClass = 'b4';
+                        break;
+                    case 5:
+                        cellClass = 'b5';
+                        break;
+                    case 6:
+                        cellClass = 'b6';
+                        break;
+                    case 7:
+                        cellClass = 'b7';
+                        break;
+                    case 8:
+                        cellClass = 'b8';
+                        break;
+                }
+                cell.classList.add(cellClass);
                 if (closedCount <= BOMBS_QUANTITY) {
                     gameOver('win');
                 }
@@ -161,13 +195,12 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
             cell.classList.toggle('flag');
 
             if (cell.classList.contains('flag')) {
-                //cell is flagged
                 cellsFlagged++;
+                updateFlagCounter();
                 if (isBomb(row, column)) {
                     bombsFlagged++;
                 }
             } else {
-                //cell is not flagged
                 cellsFlagged--;
                 if (isBomb(row, column)) {
                     bombsFlagged--;
@@ -176,6 +209,10 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
 
             checkFlags();
         }
+    }
+
+    function updateFlagCounter() {
+        document.querySelector('#flags_amount').textContent = BOMBS_QUANTITY - cellsFlagged;
     }
 
     function checkFlags() {
