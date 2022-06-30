@@ -71,8 +71,8 @@ ul {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    font-size: 45px;
-    padding: 20px 80px;
+    font-size: 5vh;
+    padding: 2vh 4.5vw;
     display: block;
 }
 
@@ -91,13 +91,13 @@ ul {
 .nav-elem li a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 1.5vw;
     display: block;
 }
 
 .logo {
     color: #55E063 !important;
-    font-size: 3rem;
+    font-size: 3vw;
     margin-left: 20px;
 }
 
@@ -106,14 +106,14 @@ ul {
 }
 
 .btn1:hover a {
-    padding: 25px 82px;
-    font-size: 50px;
+    padding: 1.5vh 5.5vw;
+    font-size: 5.5vh;
 }
 
 .container {
-    width: 30% !important;
-    height: 50%;
-    margin-top: 10.5%;
+    width: 35% !important;
+    height: 73vh;
+    margin-top: 10vh;
     border-style: solid;
     border-width: 3px;
     border-color: #6BF5DC;
