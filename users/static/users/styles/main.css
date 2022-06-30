@@ -111,8 +111,8 @@ ul {
 }
 
 .container {
-    width: 35% !important;
-    height: 73vh;
+    width: 30% !important;
+    margin-bottom: auto;
     margin-top: 10vh;
     border-style: solid;
     border-width: 3px;
