@@ -6,23 +6,21 @@ document.getElementById('difficulty').addEventListener('change', function() {
             var currentEl = custom_diff[i];
             currentEl.style.display = 'block';
         }
-        if (document.getElementById('game_mode').value === 'timer'){
+        if (document.getElementById('game_mode').value === 'timer') {
             for (var i = 0; i < custom_time.length; i++) {
                 var currentEl = custom_time[i];
                 currentEl.style.display = 'block';
             }
         }
-        document.getElementById('container-box').style.height = '500px';
     } else {
         for (var i = 0; i < custom_diff.length; i++) {
             var currentEl = custom_diff[i];
             currentEl.style.display = 'none';
         }
         for (var i = 0; i < custom_time.length; i++) {
-                var currentEl = custom_time[i];
-                currentEl.style.display = 'none';
+            var currentEl = custom_time[i];
+            currentEl.style.display = 'none';
         }
-        document.getElementById('container-box').style.height = '355px';
     }
 
 
@@ -57,7 +55,7 @@ function getSettingsInfo(event) {
         time = form.querySelector('[name="time"]');
     var isTrue = true;
     if (document.getElementById('difficulty').value === 'custom') {
-        if (bombs_quantity.value >= height.value * width.value || width.value > 32 || height.value > 32 || time.value <= 0 || time.value >= 60) {
+        if (bombs_quantity.value >= height.value * width.value || width.value > 32 || height.value > 32) {
             document.getElementById('warning').style.display = 'block';
             isTrue = false;
         }
