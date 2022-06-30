@@ -10,10 +10,6 @@ startGame(width, height, bombs_quantity, game_mode, time);
 function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
     const field = document.querySelector('.field');
     console.log(document.getElementById('field').offsetWidth);
-    // if (GAME_MODE == 'classic') {
-    //     document.getElementById('timer').style.display = 'none';
-    //     field.style.top = '50%';
-    // }
     var width_px = 750 / HEIGHT;
     if (width_px > 45) width_px = 45;
     let par = 'repeat(' + width + ', ' + width_px + 'px)';

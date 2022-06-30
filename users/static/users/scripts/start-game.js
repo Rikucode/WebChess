@@ -6,21 +6,32 @@ document.getElementById('difficulty').addEventListener('change', function() {
             var currentEl = custom_diff[i];
             currentEl.style.display = 'block';
         }
+        if (document.getElementById('game_mode').value === 'timer'){
+            for (var i = 0; i < custom_time.length; i++) {
+                var currentEl = custom_time[i];
+                currentEl.style.display = 'block';
+            }
+        }
         document.getElementById('container-box').style.height = '500px';
     } else {
         for (var i = 0; i < custom_diff.length; i++) {
             var currentEl = custom_diff[i];
             currentEl.style.display = 'none';
         }
+        for (var i = 0; i < custom_time.length; i++) {
+                var currentEl = custom_time[i];
+                currentEl.style.display = 'none';
+        }
         document.getElementById('container-box').style.height = '355px';
     }
+
 
 });
 
 document.getElementById('game_mode').addEventListener('change', function() {
     console.log('You selected: ', this.value);
     var custom_time = document.querySelectorAll('#custom_time');
-    if (this.value === 'timer') {
+    if (this.value === 'timer' && document.getElementById('difficulty').value === 'custom') {
         for (var i = 0; i < custom_time.length; i++) {
             var currentEl = custom_time[i];
             currentEl.style.display = 'block';
