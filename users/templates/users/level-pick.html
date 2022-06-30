@@ -6,7 +6,7 @@
 {% endblock %}
 {% block title %}Minesweeper{% endblock %}
 {% block content %}
-<div class="container" style="height: 50vh" align='center' id='container-box'>
+<div class="container" align='center' id='container-box'>
   <h1 style="margin: 30px; font-weight: bold" align='center'>Game Level</h1>
   <div style="margin-top: 50px; margin-bottom: 20px">
     <form id="settings">
@@ -38,12 +38,12 @@
             <div style="margin-bottom: 20px; height: 30px;"><input type="text" name="width" placeholder="Min: 8 Max: 32"></div>
             <div style="margin-bottom: 20px; height: 30px"><input type="text" name="height" placeholder="Min: 8 Max: 32"></div>
             <div style="margin-bottom: 20px; height: 30px"><input type="text" name="bombs_quantity" placeholder="Min: 1"></div>
+            <div id="custom_time" style="margin-bottom: 10px; height: 30px;"><input type="text" name="time" placeholder="Input time amount(in minutes)"></div>
             <p style="color: red; font-size: 15px; font-weight: bold; display: none" id='warning'>Warning: Wrong values!</p>
           </div>
-            <div id="custom_time" style="margin-bottom: 10px; height: 30px;"><input type="text" name="time" placeholder="Input time amount(in minutes)"></div>
         </div>
       </div>
-      <div align='center' style="margin-top: 10px"><input type="submit" class='login_btn' value="Play!"></div>
+      <div align='center' style="margin-top: 20px"><input type="submit" class='login_btn' value="Play"></div>
     </form>
   </div>
 </div>
