@@ -1,6 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0;
+}
+
 .play-field {
     width: 60%;
     position: relative;
+    overflow: hidden;
+}
+
+.hello-msg {
+    font-size: 20px;
+    margin-right: 20px;
 }
 
 .field {
@@ -23,12 +38,30 @@ button {
     cursor: pointer;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 button:hover {
     background-color: whitesmoke;
 }
 
+ul {
+    padding-inline-start: 0px !important;
+}
+
 button:disabled {
     border-width: 1.5px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    background-color: black;
+    color: white;
+    padding: 0px !important;
 }
 
 .message {
@@ -43,12 +76,31 @@ button:disabled {
     color: red;
 }
 
+.nav-elem ul {
+    margin-bottom: 0px;
+    display: flex;
+}
+
 #win {
     color: limegreen !important;
 }
 
+.btn_list {
+    align-self: center;
+}
+
 #win .btn2 {
     color: limegreen !important;
+}
+
+.btn_list,li {
+    list-style: none;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(130, 249, 209);
+    margin: 50px;
+    text-align: center;
 }
 
 .message p {
@@ -57,49 +109,168 @@ button:disabled {
     margin-bottom: 3vh;
 }
 
-.btn2 {
-    text-decoration: none;
-    cursor: pointer;
-    color: red !important;
-    font-weight: bold;
-    font-size: 2vw;
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    background: url("../images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    display: flex;
+}
+
+.hello-msg {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none !important;
+
+}
+.logo{
+     margin-top: -1em;
+}
+
+ul {
+    padding-inline-start: 0px !important;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 0px !important;
+}
+
+.nav-elem ul {
+    margin-bottom: 0px;
+    margin-top: -2em;
+    display: flex;
+}
+
+.btn_list {
     align-self: center;
-    width: 23vw;
-    display: block;
+}
+
+.btn_list li {
+    list-style: none;
     border-radius: 7px;
     border-style: solid;
     border-width: 3px;
     border-color: rgb(130, 249, 209);
+    margin: 50px;
+    text-align: center;
 }
 
-.btn2:hover {
+.btn_list li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 5vh;
+    padding: 2vh 4.5vw;
+    display: block;
+}
+
+.nav-elem ul li {
+    list-style: none;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #66ECE4;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 5px 25px;
+    position: relative;
+}
+
+.nav-elem li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5vw;
+    display: block;
+}
+
+.logo {
+    color: #55E063 !important;
+    font-size: 3vw;
+    margin-left: 20px;
+}
+
+.btn1:hover {
     background-color: rgba(100, 247, 220, 0.56);
 }
 
-.timer-container {
-    position: relative;
-    width: 20%;
+.btn1:hover a {
+    padding: 1.5vh 5.5vw;
+    font-size: 5.5vh;
 }
 
-.timer,
-.flags_amount {
-    position: absolute;
+.container {
+    width: 30% !important;
+    margin-bottom: auto;
+    margin-top: 10vh;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #6BF5DC;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.category {
+    width: 35%;
+    margin-right: 20px;
+}
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+.login_btn {
+    font-size: 20px;
+    font-weight: bold;
+    color: black !important;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #6BF5DC;
+    border-radius: 7px;
+    padding: 5px 20px;
+}
+
+.drop-down {
+    display: none;
+    margin-top: 2px;
     background-color: black;
-    padding: 1vh 2vw;
-    top: 10%;
-    color: red;
-    font-family: "Technology";
-    border: 6px inset rgba(255, 255, 255, .75);
 }
 
-#timer,
-#flags_amount {
-    font-size: 4em;
+.drop-down ul {
+    display: block;
+    margin: 10px;
 }
 
-@font-face {
-    font-family: "Technology";
-    src: url("../fonts/Technology/Technology.ttf") format("truetype");
-    font-style: normal;
-    font-weight: normal;
+.drop-down ul li {
+    border: none;
+    padding-right: 60px;
+}
+
+.navbar ul li:hover .drop-down {
+    display: block;
+    position: absolute;
+    right: -25px;
+    top: 100%;
+}
+
+.drop-down ul li:hover {
+    background-color: rgb(55, 55, 55);
 }

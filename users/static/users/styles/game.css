@@ -1,13 +1,17 @@
 .play-field {
     position: relative;
+
 }
 
 .field {
     display: grid;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    box-shadow: 0 0 12px;
+    border: 8px double rgba(0, 0, 0, .5);
 }
 
 .background {
@@ -75,19 +79,31 @@ button:disabled{
     background-color: rgba(100, 247, 220, 0.56);
 }
 
-.timer,.flags_amount {
+.timer,
+.flags_amount {
+    position: absolute;
     background-color: black;
-    width: 100%;
-
-    margin-top: 20px;
+    padding: 1vh 2vw;
+    top: 10%;
     color: red;
     font-family: "Technology";
     border: 6px inset rgba(255, 255, 255, .75);
+    box-shadow: 0 0 8px;
+}
+.timer{
+    width: 60%;
 }
 #timer, #flags_amount {
+    position: center;
     font-size: 4em;
 }
 
+.timer-container {
+    position: relative;
+    padding: 10%;
+    width: 20%;
+    height: 40%;
+}
 
 @font-face {
 font-family: "Technology";
