@@ -2,17 +2,18 @@ let game_mode = sessionStorage.getItem('game_mode');
 let width = sessionStorage.getItem('width');
 let height = sessionStorage.getItem('height');
 let bombs_quantity = sessionStorage.getItem('bombs_quantity');
+let time = sessionStorage.getItem('timer');
 
 
-startGame(width, height, bombs_quantity, game_mode);
+startGame(width, height, bombs_quantity, game_mode, time);
 
-function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE) {
+function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
     const field = document.querySelector('.field');
     console.log(document.getElementById('field').offsetWidth);
-    if (GAME_MODE == 'classic') {
-        document.getElementById('timer').style.display = 'none';
-        field.style.top = '50%';
-    }
+    // if (GAME_MODE == 'classic') {
+    //     document.getElementById('timer').style.display = 'none';
+    //     field.style.top = '50%';
+    // }
     var width_px = 750 / HEIGHT;
     if (width_px > 45) width_px = 45;
     let par = 'repeat(' + width + ', ' + width_px + 'px)';
@@ -28,7 +29,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE) {
     const cells = [...field.children];
 
     let closedCount = cellsQuantity;
-    //  let firstClick = true;
+    let firstClick = true;
     let bombs = [...Array(cellsQuantity).keys()]
         .sort(() => Math.random() - 0.5)
         .slice(0, BOMBS_QUANTITY);
@@ -43,7 +44,14 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE) {
         column = index % WIDTH;
         row = Math.floor(index / WIDTH);
 
-        // if (firstClick){
+        if (firstClick){
+            if (GAME_MODE == "classic") {
+               secundomer();
+            } else {
+                timer(parseInt(TIME));
+            }
+            firstClick = false;
+        }
         //     let i = 0;
         //     while (i < BOMBS_QUANTITY ){
         //         let randomCell = Math.round(Math.random() * (WIDTH * HEIGHT - 1));
@@ -173,7 +181,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE) {
 
 function gameOver(Id) {
     document.getElementById(Id).style.display = 'block';
-    clearTimeout(t);
+    timeStop();
 
 }
 

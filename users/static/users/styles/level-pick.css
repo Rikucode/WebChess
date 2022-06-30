@@ -2,6 +2,9 @@
     display: none;
 }
 
+#custom_time {
+    display: none;
+}
 #custom-offer {
     cursor: pointer;
 }
