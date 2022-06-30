@@ -9,28 +9,28 @@ startGame(width, height, bombs_quantity, game_mode, time);
 
 function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
     const cellsQuantity = WIDTH * HEIGHT;
-    let width_px = 750 / HEIGHT;
-    if (width_px > 45) width_px = 45;
+    let width_px = 80 / HEIGHT;
+    if (width_px > 5) width_px = 5;
 
     const field = document.querySelector('.field');
     console.log(document.getElementById('field').offsetWidth);
 
-    document.getElementById('field').style.gridTemplateColumns = 'repeat(' + width + ', ' + width_px + 'px)';
+    document.getElementById('field').style.gridTemplateColumns = 'repeat(' + width + ', ' + width_px + 'vh)';
 
-    if (GAME_MODE == 'timer'){
+    if (GAME_MODE == 'timer') {
         let min = Math.floor(TIME);
         let sec = (TIME - min) * 60;
-        document.getElementById('timer').textContent = (min > 9 ? min : "0" + min)
-        		 + ":" + (sec > 9 ? sec : "0" + sec);
+        document.getElementById('timer').textContent = (min > 9 ? min : "0" + min) +
+            ":" + (sec > 9 ? sec : "0" + sec);
     }
 
     field.innerHTML = '<button></button>'.repeat(cellsQuantity);
     let buttons = document.getElementsByTagName('button');
 
     for (let i = 0; i < buttons.length; i++) {
-        buttons[i].style.height = width_px + 'px';
-        if (width_px < 15) buttons[i].style.fontSize = 5 + 'px';
-        else buttons[i].style.fontSize = (width_px - 15) + 'px';
+        buttons[i].style.height = width_px + 'vh';
+        if (width_px < 3) buttons[i].style.fontSize = 1 + 'vh';
+        else buttons[i].style.fontSize = (width_px - 1) + 'vh';
     }
     const cells = [...field.children];
     document.querySelector('#flags_amount').textContent = BOMBS_QUANTITY;
@@ -54,7 +54,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
 
         if (firstClick) {
             if (GAME_MODE === "classic") {
-               secundomer();
+                secundomer();
             } else {
                 timer(parseInt(TIME));
             }
@@ -114,7 +114,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
 
             if (nearBombsCount !== 0) {
                 let cellClass;
-                switch (nearBombsCount){
+                switch (nearBombsCount) {
                     case 1:
                         cellClass = 'b1';
                         break;
@@ -169,7 +169,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
 
         const index = row * WIDTH + column;
 
-        for (let i = 0; i < bombs.length; i++){
+        for (let i = 0; i < bombs.length; i++) {
             if (bombs[i] === index) {
                 bombs.splice(i, 1);
                 console.log(`bomb has been deleted (${row}, ${column})`);
@@ -179,7 +179,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
         let newBombIndex = Math.round(Math.random() * (cellsQuantity - 1));
 
         while (newBombIndex === index) {
-           newBombIndex = Math.round(Math.random() * (cellsQuantity - 1));
+            newBombIndex = Math.round(Math.random() * (cellsQuantity - 1));
         }
 
         bombs.push(newBombIndex);
