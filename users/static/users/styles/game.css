@@ -10,6 +10,11 @@
     transform: translate(-50%, -50%);
 }
 
+.background {
+    background-image: none;
+    background-color: lightgrey;
+}
+
 button {
     border-width: 1.5px;
     background: #e1e3e2;
@@ -70,8 +75,24 @@ button:disabled{
     background-color: rgba(100, 247, 220, 0.56);
 }
 
-.timer {
+.timer,.flags_amount {
+    background-color: black;
     width: 100%;
-    margin-top: 70px;
+
+    margin-top: 20px;
     color: red;
+    font-family: "Technology";
+    border: 6px inset rgba(255, 255, 255, .75);
+}
+#timer, #flags_amount {
+    font-size: 4em;
+}
+
+
+@font-face {
+font-family: "Technology";
+
+src: url("../fonts/Technology/Technology.ttf") format("truetype");
+font-style: normal;
+font-weight: normal;
 }
