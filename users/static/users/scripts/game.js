@@ -172,7 +172,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
         for (let i = 0; i < bombs.length; i++) {
             if (bombs[i] === index) {
                 bombs.splice(i, 1);
-                console.log(`bomb has been deleted (${row}, ${column})`);
+                // console.log(`bomb has been deleted (${row}, ${column})`);
             }
         }
 
@@ -183,7 +183,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
         }
 
         bombs.push(newBombIndex);
-        console.log(`bomb has been added (${newBombIndex})`);
+        // console.log(`bomb has been added (${newBombIndex})`);
     }
 
     function flagCell(row, column) {
@@ -202,12 +202,12 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
                 }
             } else {
                 cellsFlagged--;
+                updateFlagCounter();
                 if (isBomb(row, column)) {
                     bombsFlagged--;
                 }
             }
 
-            checkFlags();
         }
     }
 
@@ -215,12 +215,12 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
         document.querySelector('#flags_amount').textContent = BOMBS_QUANTITY - cellsFlagged;
     }
 
-    function checkFlags() {
-        console.log(`bombs remained ${BOMBS_QUANTITY - bombsFlagged}`);
-        if (bombsFlagged >= BOMBS_QUANTITY && cellsFlagged === bombsFlagged) {
-            gameOver('win');
-        }
-    }
+    // function checkFlags() {
+    //     console.log(`bombs remained ${BOMBS_QUANTITY - bombsFlagged}`);
+    //     if (bombsFlagged >= BOMBS_QUANTITY && cellsFlagged === bombsFlagged) {
+    //         gameOver('win');
+    //     }
+    // }
 }
 
 function gameOver(Id) {
