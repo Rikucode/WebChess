@@ -9,13 +9,17 @@ startGame(width, height, bombs_quantity, game_mode, time);
 
 function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
     const cellsQuantity = WIDTH * HEIGHT;
-
-    let width_px = 80 / (HEIGHT > WIDTH ? WIDTH : HEIGHT);
+    let LineCount = HEIGHT;
+    if (parseInt(LineCount) < parseInt(WIDTH)){
+        LineCount = WIDTH;
+    }
+    let width_px = 80 / LineCount;
+    console.log(LineCount);
     if (width_px > 5) width_px = 5;
 
     const field = document.querySelector('.field');
-    console.log(document.getElementById('field').offsetWidth);
-
+    //console.log(document.getElementById('field').offsetWidth);
+    console.log(width_px);
     document.getElementById('field').style.gridTemplateColumns = 'repeat(' + width + ', ' + width_px + 'vh)';
 
     if (GAME_MODE == 'timer') {
@@ -173,7 +177,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
         for (let i = 0; i < bombs.length; i++) {
             if (bombs[i] === index) {
                 bombs.splice(i, 1);
-                // console.log(`bomb has been deleted (${row}, ${column})`);
+                console.log(`bomb has been deleted (${row}, ${column})`);
             }
         }
 
@@ -184,7 +188,7 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
         }
 
         bombs.push(newBombIndex);
-        // console.log(`bomb has been added (${newBombIndex})`);
+        console.log(`bomb has been added (${newBombIndex})`);
     }
 
     function flagCell(row, column) {
@@ -203,12 +207,12 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
                 }
             } else {
                 cellsFlagged--;
-                updateFlagCounter();
                 if (isBomb(row, column)) {
                     bombsFlagged--;
                 }
             }
 
+            checkFlags();
         }
     }
 
@@ -216,12 +220,12 @@ function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
         document.querySelector('#flags_amount').textContent = BOMBS_QUANTITY - cellsFlagged;
     }
 
-    // function checkFlags() {
-    //     console.log(`bombs remained ${BOMBS_QUANTITY - bombsFlagged}`);
-    //     if (bombsFlagged >= BOMBS_QUANTITY && cellsFlagged === bombsFlagged) {
-    //         gameOver('win');
-    //     }
-    // }
+    function checkFlags() {
+        console.log(`bombs remained ${BOMBS_QUANTITY - bombsFlagged}`);
+        if (bombsFlagged >= BOMBS_QUANTITY && cellsFlagged === bombsFlagged) {
+            gameOver('win');
+        }
+    }
 }
 
 function gameOver(Id) {
