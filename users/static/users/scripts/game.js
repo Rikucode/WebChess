@@ -10,7 +10,7 @@ startGame(width, height, bombs_quantity, game_mode, time);
 function startGame(WIDTH, HEIGHT, BOMBS_QUANTITY, GAME_MODE, TIME) {
     const cellsQuantity = WIDTH * HEIGHT;
 
-    let width_px = 80 / (HEIGHT > WIDTH ? HEIGHT : WIDTH);
+    let width_px = 80 / (HEIGHT > WIDTH ? WIDTH : HEIGHT);
     if (width_px > 5) width_px = 5;
 
     const field = document.querySelector('.field');
